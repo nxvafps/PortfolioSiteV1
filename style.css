@@ -1,16 +1,6 @@
 /*---------------FONTS---------------*/
 
 @font-face {
-    font-family: bigNoodle;
-    src: url("./assets/Fonts/bigNoodle.ttf");
-}
-
-@font-face {
-    font-family: bankSans;
-    src: url("./assets/Fonts/bankSans.otf");
-}
-
-@font-face {
     font-family: futura;
     src: url("./assets/Fonts/Futura.otf");
 }
@@ -21,16 +11,32 @@
     padding: 0;
     font-family: futura;
 }
-body{
+
+body {
     background-color: #7b7777;
     color: #ffffff;
 }
+
+main {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.pageTitle {
+    margin: 10px 0 10px 0;
+}
+
 .invisible {
     display: none;
 }
+
 .border {
     border: 1px solid #ffffff;
 }
+
+/*-------------SCROLLBAR-------------*/
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -53,7 +59,7 @@ body{
 
 /*-------------NAVIGATION-------------*/
 
-.navigation{
+#navContainer{
     background-color: #434343;
     height: 80px;
     width: 100%;
@@ -62,35 +68,24 @@ body{
     justify-content: space-between; 
 }
 
-.navLeft, .navCenter, .navRight{
+#navLeft, #navRight{
     display: flex;
-    flex-basis: 33%;
+    flex-basis: 50%;
     align-items: center;
 }
 
 /*Contents of the left hand navigation flexbox*/
 
-.navIcon {
+#navIcon {
 height: 60px;
 padding: 0 10px;
 }
 
-.iconName, .navLink {
+#navText, .navLink {
 font-size: 20px;
 }
 
-.navCenter {
-    justify-content: center;
-    text-align: center;
-}
-
-/*Contents of the center navigation flexbox*/
-
-.pageTitle {
-    font-size: 30px;
-}
-
-.navRight {
+#navRight {
     justify-content: flex-end; 
 }
 
@@ -115,10 +110,7 @@ font-size: 20px;
 }
 
 /*--------------HOME--------------*/
-
-.homeContainer {
-    margin: auto;
-    text-align: center;
+#banner {
     width: 100%;
 }
 
@@ -207,13 +199,51 @@ font-size: 20px;
             font-size: 20px;
         }
 
-/*--------------VIEW--------------*/
-
-.viewContainer {
-    margin: auto;
-    text-align: center;
-    width: 100%;
+/*------------PORTFOLIO------------*/
+#portfolioContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px
 }
+
+.projectContainer {
+    display: grid;
+    grid-template: auto 1fr / 1fr 3fr;
+    gap: 5px;
+    border: solid 1px transparent;
+    transition: border-color 0.3s ease;
+}
+
+.projectContainer:hover {
+    border-color: #FFF;
+}
+
+.projectImgContainer {
+    grid-column: 1;
+    grid-row: span 2;
+    align-self: center;
+    padding: 5px 0 5px 5px;
+}
+
+.projectTitleContainer {
+    padding: 5px 5px 0 0;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.projectDetailsContainer {
+    padding: 0 5px 5px 0;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.projectImg {
+    width: 125px;
+    display:block;
+    margin:0;
+}
+
 
 
 

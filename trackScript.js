@@ -1,42 +1,45 @@
 // map array and initialising variables
-let maps = [
-    ["Antarctic Peninsula", "Control"],
-    ["Blizzard World", "Hybrid"],
-    ["Busan", "Control"],
-    ["Circuit Royal", "Escort"],
-    ["Colosseo", "Push"],
-    ["Dorado", "Escort"],
-    ["Eichenwalde", "Hybrid"],
-    ["Esperanca", "Push"],
-    ["Havana", "Escort"],
-    ["Hollywood", "Hybrid"],
-    ["Illios", "Control"],
-    ["Junkertown", "Escort"],
-    ["Kings Row", "Hybrid"],
-    ["Lijang Tower", "Control"],
-    ["Midtown", "Hybrid"],
-    ["Nepal", "Control"],
-    ["New Junk City", "Flashpoint"],
-    ["New Queens Street", "Push"],
-    ["Numbani", "Hybrid"],
-    ["Oasis", "Control"],
-    ["Paraiso", "Hybrid"],
-    ["Rialto", "Escort"],
-    ["Route 66", "Escort"],
-    ["Runasapi", "Push"],
-    ["Samoa", "Control"],
-    ["Shambali Monastery", "Escort"],
-    ["Suravasa", "Flashpoint"],
-    ["Watchpoint: Gibraltar", "Escort"]
-];
+document.addEventListener('DOMContentLoaded', function() {
+    let maps = [
+        ["Antarctic Peninsula", "Control"],
+        ["Blizzard World", "Hybrid"],
+        ["Busan", "Control"],
+        ["Circuit Royal", "Escort"],
+        ["Colosseo", "Push"],
+        ["Dorado", "Escort"],
+        ["Eichenwalde", "Hybrid"],
+        ["Esperanca", "Push"],
+        ["Havana", "Escort"],
+        ["Hollywood", "Hybrid"],
+        ["Illios", "Control"],
+        ["Junkertown", "Escort"],
+        ["Kings Row", "Hybrid"],
+        ["Lijang Tower", "Control"],
+        ["Midtown", "Hybrid"],
+        ["Nepal", "Control"],
+        ["New Junk City", "Flashpoint"],
+        ["New Queens Street", "Push"],
+        ["Numbani", "Hybrid"],
+        ["Oasis", "Control"],
+        ["Paraiso", "Hybrid"],
+        ["Rialto", "Escort"],
+        ["Route 66", "Escort"],
+        ["Runasapi", "Push"],
+        ["Samoa", "Control"],
+        ["Shambali Monastery", "Escort"],
+        ["Suravasa", "Flashpoint"],
+        ["Watchpoint: Gibraltar", "Escort"]
+    ];
 
-const mapContainer = document.querySelector("#mapContainer"),
-mapList = document.querySelector("#mapList"),
-mapSearch = document.querySelector("#mapSearch"),
-mapText = document.querySelector("#mapText"),
-gameModeContainer = document.querySelector("#gameModeContainer"),
-gameModeText = document.querySelector("#gameModeText"),
-gameModeImg = document.querySelector("#gameModeImg");
+    const mapContainer = document.querySelector("#mapContainer"),
+    mapList = document.querySelector("#mapList"),
+    mapSearch = document.querySelector("#mapSearch"),
+    mapText = document.querySelector("#mapText"),
+    gameModeContainer = document.querySelector("#gameModeContainer"),
+    gameModeText = document.querySelector("#gameModeText"),
+    gameModeImg = document.querySelector("#gameModeImg");
+
+});
 
 // creates the map list
 for (let i = 0; i < maps.length; i++) {
@@ -71,19 +74,18 @@ function setMap(e, f) {
     gameModeImg.classList.remove("invisible")
 }
 
-// every time a key is pressed filters the dropdown list for matches every time a key is pressed, runs the checkMapSelection function
-mapSearch.addEventListener("keyup", () => {
-    const filter = mapSearch.value.toLowerCase();
-    const li = mapList.querySelectorAll("li"); 
-    dropdownVis();
-    for (let i = 0; i < li.length; i++) {
-        li[i].classList.toggle("invisible", !maps[i][0].toLowerCase().includes(filter));
+mapSearch.addEventListener("keyup", () => { // a function that is called everytime the user types in the input field
+    const filter = mapSearch.value.toLowerCase(); // converts the user input to lower case
+    const li = mapList.querySelectorAll("li"); // stores the current list values in a variable
+    dropdownVis("show"); // shows the dropdown list
+    for (let i = 0; i < li.length; i++) { // for loop to chedk user input against the map list
+        li[i].classList.toggle("invisible", !maps[i][0].toLowerCase().includes(filter)); //if the map name doesnt contain the user input then hide it
     }
-    for (const [mapName, gameMode] of maps) {
-        if (mapName.toLowerCase() === mapSearch.value.toLowerCase()) {
-            mapSearch.blur();
-            setMap(mapName, gameMode);
-            return;
+    for (const [mapName, gameMode] of maps) { // loops through the map array 
+        if (mapName.toLowerCase() === filter) { // if the user input is a complete map name
+            mapSearch.blur(); // unfocuses the map search
+            setMap(mapName, gameMode); // sets the map and game mode
+            return; 
         }
     }
     gameModeImg.classList.add("invisible");
@@ -97,15 +99,15 @@ document.addEventListener("click", (event) => {
         dropdownVis("hide"); // hide the dropdown menu
         return;
     }
-    if (mapText.contains(event.target) || mapSearch.contains(event.target)) { // if the click was inside of the map text element 
-        mapSearchVis("show"); //show the map input element and hide the map text element
-        dropdownVis("show");
+    if (mapText.contains(event.target) || mapSearch.contains(event.target)) { // if the click was inside of the map text or map search element 
+        mapSearchVis("show"); // show the map input element and hide the map text element
+        dropdownVis("show"); // show the map dropdown list
         mapSearch.focus(); // focus on the map input element
         return;
     }
-    if (event.target.classList.contains("mapListItem")) { //if the click was on a map list element
-        const index = event.target.getAttribute("data-index"); //get the index value of the map in the original array
-        setMap(maps[index][0], maps[index][1]); //set the map to the element that was clicked on
+    if (event.target.classList.contains("mapListItem")) { // if the click was on a map list element
+        const index = event.target.getAttribute("data-index"); // get the index value of the map in the original array
+        setMap(maps[index][0], maps[index][1]); // set the map to the element that was clicked on
     }
 });
 
