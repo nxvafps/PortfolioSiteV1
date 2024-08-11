@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portfolio Home </title>
+    <title> Home </title>
     <link rel="icon" type="image/x-icon" href="./assets/Images/novaLogo3.png">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -32,16 +32,25 @@
             </div>
         </div>
 
+        <button id="hamburgerMenu">&#9776;</button>
+
     </nav>
+
+    <div id="sideMenu" class="sideMenu">
+        <a href="javascript:void(0)" id="closeButton">&times;</a>
+        <a href="#">Home</a>
+        <a href="./public/PortfolioProjects.html">Portfolio</a>
+        <a href="./public/socials.html">Socials</a>
+    </div>
 
     <header id="bannerContainer">
         <img id="banner" src="./assets/Images/banner.png" alt="nova banner">
     </header>
 
     <main id="homeContainer">
-        <h1 id="portfolioPageTitle" class="pageTitle">Welcome</h1>
+        <h1 id="portfolioPageTitle" class="pageTitle"></h1>
     </main>
 
-    
+    <script src="./sideMenuScript.js" charset="utf-8"></script>
 </body>
 </html>
