@@ -35,17 +35,6 @@ a:hover {
     color: #434343;
 }
 
-footer {
-    display:flex;
-    justify-content:space-around;
-    height:80px;
-    width: 100%;
-    padding:20px 0 0 0;
-}
-
-footer a img{
-    height:60px
-}
 
 .pageTitle {
     margin: 10px 0 10px 0;
@@ -205,6 +194,20 @@ font-size: 20px;
 }
 
 /*-------------FOOTER-------------*/
+footer {
+    display:flex;
+    justify-content:Center;
+    height:80px;
+    width: 80%;
+    padding:20px 0 0 0;
+    margin: auto;
+    gap: 20px;
+}
+
+footer a img{
+    height:60px
+}
+
 
 footer a:hover {
     background-color: #7b7777;
