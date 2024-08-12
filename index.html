@@ -48,9 +48,63 @@
     </header>
 
     <main id="homeContainer">
-        <h1 id="portfolioPageTitle" class="pageTitle"></h1>
-    </main>
+        <h1 id="portfolioPageTitle" class="pageTitle">Welcome!</h1>
+        <p id="homeIntro">
+            Here you'll find my web development portfolio showcasing the projects I have completed, along with the ones I'm currently working on!
+            <br><br>
+            But that's not all! I am also using this space to celebrate my love of gaming. Explore my content from youtube, twitter, and tiktok and join me on my adventures!
+            <br><br>
+            Stay a while, explore, and let’s create something amazing together!
+        </p>
+        <div id="skillShowcase">
+            <h2 class="skillTitle"><u>Current Project</u></h2>
+            <article id="overwatchTrackerContainer" class="projectContainer" data-url="./public/overwatchTracker.html">
+                <figure class="projectImgContainer">
+                    <img src="./assets/Images/owLogo2.png" id="overwatchTrackerLogo" class="projectImg" alt="Overwatch Tracker Project Image">
+                </figure>
+                <div class="projectTitleContainer">
+                    <h2 class="projectTitle">Overwatch Competetive Game Tracker (Current)</h2>
+                        <hr>
+                </div>
+                <div class="projectDetailsContainer">
+                    <p class="projectDetails"> 
+                        When Overwatch 2 released in late 2022, the competetive mode required 
+                        you to win 5 games, or lose 15 before displaying your new rank.
+                        Between ranked displays there was no way for you to see how many 
+                        you had won or lost. I designed a spreadsheet so I could track this.
+                        <br> <br>
+                        Since then the development team have reworked the skill rating system so
+                        it is similar to Overwatch 1, however I still want to develop this game tracker.
+                        I feel like it could be a useful tool for coaching and VOD review, and also 
+                        could help to fill the gap in analysis that cannot be done in the game.
+                    </p>
+                </div>
 
+            </article>
+            <h2 class="skillTitle"><u>Latest Upload</u></h2>
+            <div class="iFrameContainer">
+                <iframe id="youtubeEmbed" src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UU71xx-BAbLPGbJsWu4WhPHQ" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.youtube.com/@nxvafps">
+            <img src="./assets/Images/footerIcons/youtubeIcon.png" alt="Youtube Icon">
+        </a>
+        <a href="https://www.x.com/nxvafps">
+            <img src="./assets/Images/footerIcons/twitterIcon.png" alt="Twitter Icon">
+        </a>
+        <a href="https://www.tiktok.com/@nxvafps">
+            <img src="./assets/Images/footerIcons/tiktokIcon.png" alt="Tiktok Icon">
+        </a>
+        <a href="https://www.twitch.com/nxvafps">
+            <img src="./assets/Images/footerIcons/twitchIcon.png" alt="Twitch Icon">
+        </a>
+        <a href="https://www.discord.gg/tSNujPdzAu">
+            <img src="./assets/Images/footerIcons/discordIcon.png" alt="Discord Icon">
+        </a>
+    </footer>
     <script src="./sideMenuScript.js" charset="utf-8"></script>
+    <script src="./portfolioScript.js" charset="utf-8"></script>
 </body>
 </html>
