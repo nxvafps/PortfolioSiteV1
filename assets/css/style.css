@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     text-align: center;
     width: 100%;
 }
@@ -37,11 +37,10 @@ a:hover {
 
 
 .pageTitle {
-    margin: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
     width: 100%;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
 }
 
 .invisible {
@@ -93,20 +92,17 @@ a:hover {
 }
 
 /*Contents of the left hand navigation flexbox*/
-#navIconContainer {
+#navIconContainer #navIcon {
     max-height: 50px;
-    padding:0;
     margin: 0;
 }
 
 #navIcon {
-max-height: 50px;
-padding: 0 10px 0 10px;
-margin:0;
+    padding: 0 10px 0 10px;
 }
 
 #navText, .navLink {
-font-size: 20px;
+    font-size: 20px;
 }
 
 #navRight {
@@ -145,7 +141,7 @@ font-size: 20px;
 }
 
 /* Side menu */
-.sideMenu {
+#sideMenu {
     height: 100%;
     width: 0;
     position: fixed;
@@ -158,16 +154,16 @@ font-size: 20px;
     padding-top: 60px;
 }
 
-.sideMenu a:hover {
+#sideMenu a:hover {
     background-color: #ffffff;
     color: #434343;
 }
 
-.sideMenu.open {
+#sideMenu.open {
     width: 250px;
 }
 
-.sideMenu a {
+#sideMenu a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -176,7 +172,7 @@ font-size: 20px;
     transition: 0.3s;
 }
 
-.sideMenu #closeButton {
+#sideMenu #closeButton {
     position: absolute;
     top: 0;
     right: 25px;
@@ -196,7 +192,7 @@ font-size: 20px;
 /*-------------FOOTER-------------*/
 footer {
     display:flex;
-    justify-content:Center;
+    justify-content:center;
     height:80px;
     width: 80%;
     padding:20px 0 0 0;
