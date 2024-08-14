@@ -23,13 +23,13 @@
 
         <div id="navRight">
             <div class="linkContainer">
-                <a href="../index.html" id="homeNavLink" class="navLink">Home</a>
+                <a href="#" data-url="../index.html" id="homeNavLink" class="navLink">Home</a>
             </div>
             <div class="linkContainer">
-                <a href="../public/PortfolioProjects.html" id="projectsNavLink" class="navLink">Portfolio</a>
+                <a href="#" data-url="../public/PortfolioProjects.html" id="projectsNavLink" class="navLink">Portfolio</a>
             </div>
             <div class="linkContainer">
-                <a href="../public/socials.html" id="socialsNavLink" class="navLink">Socials</a>
+                <a href="#" data-url="../public/socials.html" id="socialsNavLink" class="navLink">Socials</a>
             </div>
         </div>
 
@@ -39,13 +39,31 @@
 
     <div id="sideMenu" class="sideMenu">
         <a href="javascript:void(0)" id="closeButton">&times;</a>
-        <a href="../index.html">Home</a>
-        <a href="../public/PortfolioProjects.html">Portfolio</a>
-        <a href="../public/socials.html">Socials</a>
+        <a href="#" class="sideMenuLink" data-url="../index.html">Home</a>
+        <a href="#" class="sideMenuLink" data-url="../public/PortfolioProjects.html">Portfolio</a>
+        <a href="#" class="sideMenuLink" data-url="../public/socials.html">Socials</a>
     </div>
 
-    <main class="container viewContainer">
-        <h1 id="overwatchTrackerProject" class="pageTitle">Overwatch Competetive Tracker</h1>
+    <main id="nv1Container">
+        <h1 class="pageTitle">Overwatch Competetive Tracker</h1>
+            <article id="nv1Info">
+                <figure id="nv1ImgContainer">
+                    <img id="nv1Img" src="../assets/images/owTracker/owLogo.png">
+                </figure>
+                <div id="nv1DetailsContainer">
+                    <p id="nv1Details">
+                        When Overwatch 2 released in late 2022, the competetive mode required 
+                        you to win 5 games, or lose 15 before displaying your new rank.
+                        Between ranked displays there was no way for you to see how many 
+                        you had won or lost. I designed a spreadsheet so I could track this.
+                        <br> <br>
+                        Since then the development team have reworked the skill rating system so
+                        it is similar to Overwatch 1, however I still want to develop this game tracker.
+                        I feel like it could be a useful tool for coaching and VOD review, and also 
+                        could help to fill the gap in analysis that cannot be done in the game.
+                    </p>
+                </div>
+            </article>
     </main>
     
     <footer id="footer">
