@@ -1,0 +1,66 @@
+<header id="navContainer">
+    <div id="navLeft">
+        <div id="navIconContainer">
+            <img src="../assets/icons/logo.png" id="navIcon" alt="nova icon">
+        </div>
+        <div id="iconNameContainer">
+            <h1 id="navText">novaFPS</h1>
+        </div>
+    </div>
+
+    <nav id="navRight">
+        <div class="linkContainer">
+            <a href="./index.html" id="homeLink" class="navLink" data-url="./index.html">Home</a>
+        </div>
+        <div class="linkContainer">
+            <a href="./PortfolioProjects.html" id="projectsLink" class="navLink" data-url="./PortfolioProjects.html">Portfolio</a>
+        </div>
+        <div class="linkContainer">
+            <a href="./socials.html" id="socialsLink" class="navLink" data-url="./socials.html">Socials</a>
+        </div>
+    </nav>
+
+    <button id="hamburgerMenu">&#9776;</button>
+</header>
+<script> 
+    const currentPath = window.location.pathname;
+    console.log(currentPath)
+
+    // Function to get the relative path from the full path
+    function getRelativePath(fullPath) {
+        const pathArray = fullPath.split('/');
+        return pathArray[pathArray.length - 1];
+    }
+
+    // Get the relative path of the current URL
+    const relativeCurrentPath = getRelativePath(currentPath);
+
+    // Get all navigation links
+    const navLinks = document.querySelectorAll(".navLink");
+
+    // Loop through each navigation link
+    navLinks.forEach(link => {
+        // Get the relative path of the link's href
+        const url = link.getAttribute("data-url");
+        const relativeLinkPath = getRelativePath(url);
+        // Check if the link's relative path matches the current relative path
+        if (relativeLinkPath === relativeCurrentPath) {
+            // Add the currentNavLink class to the matching link
+            link.classList.add("currentNavLink");
+            link.setAttribute("href", "#");
+        } else {
+            // Remove the currentNavLink class from non-matching links
+            link.classList.remove("currentNavLink");
+            link.setAttribute("href", url);
+        }
+    });
+
+    switch(relativeCurrentPath) {
+        case "nv1.html":
+        navIcon = document.getElementById("navIcon");
+        navText = document.getElementById("navText");
+
+        navIcon.src = "../images/nv1/owLogo.png";
+        navText.innerHTML = "Overwatch Competetive Tracker";
+    }
+</script>

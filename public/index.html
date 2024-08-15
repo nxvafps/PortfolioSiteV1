@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home </title>
+    <link rel="icon" type="image/x-icon" href="../assets/icons/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="index"> 
+
+    <div id="header" data-include="../includes/header.html"></div>
+
+    <div id="sideMenu" data-include="../includes/sideMenu.html"></div>
+
+    <figure id="bannerContainer">
+        <img id="banner" src="../assets/icons/novaWide.png" alt="nova banner">
+    </figure>
+
+    <main id="homeContainer">
+        <h1 id="portfolioPageTitle" class="pageTitle">Welcome!</h1>
+        <p id="homeIntro">
+            Here you'll find my web development portfolio showcasing the projects I have completed, along with the ones I'm currently working on!
+            <br><br>
+            But that's not all! I am also using this space to celebrate my love of gaming. Explore my content from youtube, twitter, and tiktok and join me on my adventures!
+            <br><br>
+            Stay a while, explore, and let’s create something amazing together!
+        </p>
+        <div id="skillShowcase">
+            <h2 class="skillTitle"><u>Current Project</u></h2>
+            <div id="currentProjectContainer"></div>
+            <h2 class="skillTitle"><u>Latest Upload</u></h2>
+            <div class="iFrameContainer">
+                <iframe id="youtubeEmbed" src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UU71xx-BAbLPGbJsWu4WhPHQ" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer" data-include="../includes/footer.html">
+
+    <script src="../js/main.js" charset="utf-8"></script>
+    <script src="../js/portfolioScript.js" charset="utf-8"></script>
+</body>
+</html>

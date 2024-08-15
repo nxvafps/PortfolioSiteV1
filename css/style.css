@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: futura;
-    src: url("../fonts/Futura.otf");
+    src: url("../assets/fonts/Futura.otf");
 }
 
 /*--------------GENERAL--------------*/
@@ -141,7 +141,7 @@ a:hover {
 }
 
 /* Side menu */
-#sideMenu {
+#sideMenuContainer {
     height: 100%;
     width: 0;
     position: fixed;
@@ -154,16 +154,16 @@ a:hover {
     padding-top: 60px;
 }
 
-#sideMenu a:hover {
+#sideMenuContainer a:hover {
     background-color: #ffffff;
     color: #434343;
 }
 
-#sideMenu.open {
+#sideMenuContainer.open {
     width: 250px;
 }
 
-#sideMenu a {
+#sideMenuContainer a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -172,7 +172,7 @@ a:hover {
     transition: 0.3s;
 }
 
-#sideMenu #closeButton {
+#sideMenuContainer #closeButton {
     position: absolute;
     top: 0;
     right: 25px;
@@ -190,7 +190,7 @@ a:hover {
 }
 
 /*-------------FOOTER-------------*/
-footer {
+#footerContainer {
     display:flex;
     justify-content:center;
     height:80px;
@@ -200,12 +200,12 @@ footer {
     gap: 20px;
 }
 
-footer a img{
+#footerContainer a img{
     height:60px
 }
 
 
-footer a:hover {
+#footerContainer a:hover {
     background-color: #7b7777;
 }
 
@@ -350,58 +350,14 @@ footer a:hover {
 }
 
 /*--------OVERWATCH TRACKER--------*/
-
-#nv1Info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    max-height: 300px;
-    gap: 20px;
-
-}
-
-#nv1ImgContainer {
-    align-self: center;
-    padding: 5px 0 5px 5px;
-}
-
-#nv1Img {
-    max-height:125px;
-    display: block;
-}
-
 #nv1DetailsContainer {
-    padding: 5px 5px 5px 0;
-    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
 }
-
-@media (max-width:768px) {
-    
-    #nv1Info {
-        flex-direction: column;
-        max-height: 500px;
-    }
-    
-    #nv1ImgContainer {
-        text-align: center;
-    }
-    
-    #nv1Img {
-        height:100px;
-        display: inline-block;
-    }
-    
-    #nv1DetailsContainer {
-        max-width: 80%;
-    }
-
-}
-
-@media (max-width: 480px) {
-    #nvImg {
-        height: 80px;
-    }
+#projectDetails {
+    max-width: 80%;
+    text-align: center;
 }
 
 .mapSelectContainer {
