@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const page = document.body.getAttribute('data-page');
-    if (page === "index") {
+    if (page === "home") {
         displayCurrentProject();
     } else if (page === "portfolio") {
         displayAllProjects();
