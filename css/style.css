@@ -23,13 +23,6 @@ main {
     width: 100%;
 }
 
-nav {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    z-index: 1000; 
-}
-
 a:hover {
     background-color: #ffffff;
     color: #434343;
@@ -82,6 +75,10 @@ a:hover {
     display: flex;
     align-items: center; 
     justify-content: space-between; 
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
 }
 
 #navLeft, #navRight{
