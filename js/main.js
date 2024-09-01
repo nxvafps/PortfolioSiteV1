@@ -1,6 +1,6 @@
 let projectList = [
     [
-        "./nv1.html", 
+        "./nv1/nv1Home.html", 
         "Overwatch Competetive Tracker", 
         "../images/nv1/owLogo.png", 
         "When Overwatch 2 released in late 2022, the competetive mode required you to win 5 games, or lose 15 before displaying your new rank.Between ranked displays there was no way for you to see how many you had won or lost. I designed a spreadsheet so I could track this. <br> <br> Since then the development team have reworked the skill rating system so it is similar to Overwatch 1, however I still want to develop this game tracker. I feel like it could be a useful tool for coaching and VOD review, and also could help to fill the gap in analysis that cannot be done in the game.", 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     for(let i = 0; i < projectList.length; i++) {
-        if (page === projectList[i][5]) {
+        if (page === projectList[i][5] + "Home") {
             displayProjectDetails(projectList[i][3]);
         }
     }
