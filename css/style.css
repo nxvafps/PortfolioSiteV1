@@ -363,18 +363,22 @@ a:hover {
 }
 
 /*--------OVERWATCH TRACKER--------*/
-.wipText {
-    padding: 20px;
+#nv1HomeContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0 20px 0;
 }
 #nv1DetailsContainer {
     display: flex;
     max-width: 80%;
-    margin: 30px auto;
+    margin: auto;
 
     
 }
-
-
+.wipText {
+    padding: 20px;
+}
 
 .mapSelectContainer {
     display: flex;
