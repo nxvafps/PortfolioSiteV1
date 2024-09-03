@@ -16,11 +16,25 @@
 
     <main id="socialsContainer">
         <h1 id="socialsPageTitle" class="pageTitle">Socials</h1>
-        <h1 class="pageTitle">This page is a work in progress <br>(aiming to complete this 03/09/24)</h1>
+        <section id="embedContainer">
+            <h2 id="youtubeTitle">Youtube</h2>
+            <div id="ytEmbedContainer" data-include="../includes/embeds/youtube.html"></div>
+            <h2 id="tiktokTitle">Tiktok</h2>
+            <div id="tiktokEmbedContainer" data-include="../includes/embeds/tiktok.html"></div>
+            <h2 id="twitterTitle">Twitter</h2>
+            <div id="twitterEmbedContainer" data-include="../includes/embeds/twitter.html"></div>
+            <h2 id="discordTitle">Discord</h2>
+            <div id="discordEmbedContainer" data-include="../includes/embeds/discord.html"></div>
+            
+            <h2 id="twitchTitle">Twitch</h2>
+            <div id="twitchEmbedContainer" data-include="../includes/embeds/twitch.html"></div>
+        </section>
     </main>
     
-    <div id="footer" data-include="../includes/footer.html">
+    <div id="footer" data-include="../includes/footer.html"></div>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async src="https://www.tiktok.com/embed.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/main.js" charset="utf-8"></script>
 </body>
