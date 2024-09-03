@@ -1,0 +1,494 @@
+@font-face {
+  font-family: futura;
+  src: url("../assets/Fonts/Futura.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: futura;
+}
+* body {
+  background-color: #7b7777;
+  color: #ffffff;
+}
+* main {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+* .pageTitle {
+  margin: 20px 0 10px 0;
+  width: 100%;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+* .invisible {
+  display: none;
+}
+* .border {
+  border: 1px solid #ffffff;
+}
+* ::-webkit-scrollbar {
+  width: 10px;
+}
+* ::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+* ::-webkit-scrollbar-thumb {
+  background: #7b7777;
+}
+* ::-webkit-scrollbar-thumb:hover {
+  background: #7b7777;
+}
+
+#indexBody #banner {
+  width: 100%;
+}
+#indexBody #indexContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+}
+#indexBody #indexLinkContainer {
+  text-align: center;
+  box-sizing: border-box;
+}
+#indexBody #indexLinkContainer #indexLink {
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #434343;
+  color: #ffffff;
+}
+#indexBody #indexLinkContainer #indexLink:hover {
+  background-color: #ffffff;
+  color: #434343;
+}
+
+#header, #navContainer {
+  background-color: #434343;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+#header #navLeft, #navContainer #navLeft {
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+}
+#header #navLeft #navIconContainer #navIcon, #navContainer #navLeft #navIconContainer #navIcon {
+  max-height: 50px;
+  margin: 0;
+  padding: 0 10px 0 10px;
+}
+#header #navLeft #navText, #navContainer #navLeft #navText {
+  font-size: 20px;
+}
+#header #navRight, #navContainer #navRight {
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+  justify-content: flex-end;
+}
+#header #navRight .linkContainer, #navContainer #navRight .linkContainer {
+  text-align: center;
+  box-sizing: border-box;
+}
+#header #navRight .navLink, #navContainer #navRight .navLink {
+  font-size: 20px;
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #434343;
+  color: #ffffff;
+}
+#header #navRight .currentNavLink, #header #navRight .navLink:hover, #navContainer #navRight .currentNavLink, #navContainer #navRight .navLink:hover {
+  background-color: #ffffff;
+  color: #434343;
+}
+#header #hamburgerMenu, #navContainer #hamburgerMenu {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0 10px;
+}
+@media screen and (max-width: 600px) {
+  #header #navRight, #navContainer #navRight {
+    display: none;
+  }
+  #header #hamburgerMenu, #navContainer #hamburgerMenu {
+    display: block;
+  }
+}
+
+#sideMenuContainer {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  background-color: #434343;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+#sideMenuContainer a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+#sideMenuContainer a:hover {
+  background-color: #ffffff;
+  color: #434343;
+}
+#sideMenuContainer #closeButton {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+#sideMenuContainer.open {
+  width: 250px;
+}
+
+#footerContainer {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 80%;
+  padding: 20px 0 0 0;
+  margin: auto;
+  gap: 20px;
+}
+#footerContainer a img {
+  height: 60px;
+}
+#footerContainer a:hover {
+  background-color: #7b7777;
+}
+
+#footer .returnButtonContainer {
+  text-align: center;
+  box-sizing: border-box;
+}
+#footer .returnButtonContainer .returnButton {
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #7b7777;
+}
+#footer .returnButtonContainer .returnButton:hover {
+  background-color: #434343;
+  color: #ffffff;
+}
+
+#homeContainer #banner {
+  width: 100%;
+}
+#homeContainer #homeIntro {
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+}
+#homeContainer .skillTitle {
+  margin: 30px 0 0 0;
+}
+#homeContainer #skillShowcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+  height: 80%;
+}
+#homeContainer #skillShowcase .projectContainer {
+  display: grid;
+  grid-template: auto 1fr/25% 75%;
+  gap: 5px;
+  border: solid 1px transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  padding: 0 5px 0 5px;
+  margin: 10px 0 10px 0;
+}
+#homeContainer #skillShowcase .projectContainer .projectImgContainer {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  padding: 0 0 5px 5px;
+}
+#homeContainer #skillShowcase .projectContainer .projectImgContainer .projectImg {
+  width: 125px;
+  display: block;
+  margin: 0;
+}
+#homeContainer #skillShowcase .projectContainer .projectTitleContainer {
+  padding: 5px;
+  grid-column: span 2;
+  grid-row: 1;
+}
+#homeContainer #skillShowcase .projectContainer .projectTitleContainer .projectTitle {
+  font-size: 20px;
+}
+#homeContainer #skillShowcase .projectContainer .projectDetailsContainer {
+  padding: 0 5px 5px 0;
+  grid-column: 2;
+  grid-row: 2;
+}
+#homeContainer #skillShowcase .projectContainer:hover {
+  border-color: #FFF;
+}
+@media (max-width: 768px) {
+  #homeContainer #skillShowcase {
+    padding: 0;
+  }
+  #homeContainer #skillShowcase .projectContainer {
+    grid-template: auto/1fr;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+  }
+  #homeContainer #skillShowcase .projectContainer .projectImgContainer {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+  }
+  #homeContainer #skillShowcase .projectContainer .projectImgContainer .projectImg {
+    width: 100px;
+    display: inline-block;
+  }
+  #homeContainer #skillShowcase .projectContainer .projectTitleContainer {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+  }
+  #homeContainer #skillShowcase .projectContainer .projectTitleContainer .projectTitle {
+    font-size: 18px;
+  }
+  #homeContainer #skillShowcase .projectContainer .projectDetailsContainer {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+@media (max-width: 480px) {
+  #homeContainer #skillShowcase .projectImg {
+    width: 80px;
+  }
+  #homeContainer #skillShowcase .projectTitle {
+    font-size: 16px;
+  }
+}
+#homeContainer .iFrameContainer {
+  position: relative;
+  width: calc(100% - 20px);
+  padding-top: calc((100% - 20px) * 0.5625);
+  margin: 10px;
+}
+#homeContainer .iFrameContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#portfolioContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+}
+#portfolioContainer .projectContainer {
+  display: grid;
+  grid-template: auto 1fr/25% 75%;
+  gap: 5px;
+  border: solid 1px transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  padding: 0 5px 0 5px;
+  margin: 10px 0 10px 0;
+}
+#portfolioContainer .projectContainer .projectImgContainer {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  padding: 0 0 5px 5px;
+}
+#portfolioContainer .projectContainer .projectImgContainer .projectImg {
+  width: 125px;
+  display: block;
+  margin: 0;
+}
+#portfolioContainer .projectContainer .projectTitleContainer {
+  padding: 5px;
+  grid-column: span 2;
+  grid-row: 1;
+}
+#portfolioContainer .projectContainer .projectTitleContainer .projectTitle {
+  font-size: 20px;
+}
+#portfolioContainer .projectContainer .projectDetailsContainer {
+  padding: 0 5px 5px 0;
+  grid-column: 2;
+  grid-row: 2;
+}
+#portfolioContainer .projectContainer:hover {
+  border-color: #FFF;
+}
+@media (max-width: 768px) {
+  #portfolioContainer {
+    padding: 0;
+  }
+  #portfolioContainer .projectContainer {
+    grid-template: auto/1fr;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+  }
+  #portfolioContainer .projectContainer .projectImgContainer {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+  }
+  #portfolioContainer .projectContainer .projectImgContainer .projectImg {
+    width: 100px;
+    display: inline-block;
+  }
+  #portfolioContainer .projectContainer .projectTitleContainer {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+  }
+  #portfolioContainer .projectContainer .projectTitleContainer .projectTitle {
+    font-size: 18px;
+  }
+  #portfolioContainer .projectContainer .projectDetailsContainer {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+@media (max-width: 480px) {
+  #portfolioContainer .projectImg {
+    width: 80px;
+  }
+  #portfolioContainer .projectTitle {
+    font-size: 16px;
+  }
+}
+
+.wipText {
+  padding: 20px;
+}
+
+#nv1HomeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0 20px 0;
+}
+#nv1HomeContainer #nv1DetailsContainer {
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+}
+
+.mapSelectContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  color: #ffffff;
+  background-color: #7b7777;
+}
+
+.mapTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  height: 40px;
+}
+
+.mapText {
+  font-size: 20px;
+  text-align: center;
+  background-color: #7b7777;
+  color: #ffffff;
+}
+
+.mapSearch {
+  max-width: 200px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  font-size: 20px;
+  text-align: center;
+  background-color: #7b7777;
+  color: #ffffff;
+}
+
+.mapSearch::placeholder {
+  color: #ffffff;
+}
+
+.mapList {
+  width: 200px;
+  max-height: 150px;
+  overflow-y: auto; /*adds scroll bar*/
+  outline: 1px solid #7b7777;
+  font-size: 15px;
+  text-align: center;
+  list-style-type: none; /*removes list icons*/
+  background-color: #ffffff;
+  color: #7b7777;
+}
+
+.mapList > li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.mapList > li:hover {
+  background-color: #7b7777;
+  color: #ffffff;
+}
+
+.gameModeContainer {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
+}
+
+.gameModeImg {
+  height: 30px;
+  width: 30px;
+  margin: 5px 10px;
+}
+
+.gameModeText {
+  font-size: 20px;
+}/*# sourceMappingURL=styles.css.map */
