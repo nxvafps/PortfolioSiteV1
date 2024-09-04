@@ -523,6 +523,26 @@
     height: 1000px;
   }
 }
+@media (max-width: 464px) {
+  #socialsContainer #embedContainer #tiktokEmbedContainer {
+    min-height: 450px;
+    height: 450px;
+  }
+  #socialsContainer #embedContainer #tiktokEmbedContainer iframe {
+    height: 450px;
+    min-height: 450px;
+  }
+}
+@media (max-width: 424px) {
+  #socialsContainer #embedContainer #tiktokEmbedContainer {
+    min-height: 366.78px;
+    height: 366.78px;
+  }
+  #socialsContainer #embedContainer #tiktokEmbedContainer iframe {
+    min-height: 366.78px;
+    height: 366.78px;
+  }
+}
 
 .wipText {
   padding: 20px;

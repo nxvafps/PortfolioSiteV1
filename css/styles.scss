@@ -635,6 +635,32 @@
         }
     }
 
+    @media (max-width: 464px){
+        #embedContainer {
+            #tiktokEmbedContainer {
+                min-height: 450px;
+                height: 450px;
+                iframe {
+                    height: 450px;
+                    min-height: 450px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 424px){
+        #embedContainer {
+            #tiktokEmbedContainer {
+                min-height: 366.78px;
+                height: 366.78px;
+                iframe {
+                    min-height: 366.78px;
+                    height: 366.78px;
+                }
+            }
+        }
+    }
+
 }
 
 // Nv1 General  
