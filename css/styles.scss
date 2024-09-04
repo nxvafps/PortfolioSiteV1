@@ -489,7 +489,7 @@
             "twitch twitter"
             "tiktokTitle discordTitle"
             "tiktok discord";
-            gap:10px;
+            gap:20px;
             grid-template-columns: 2fr 1fr;
         
         #youtubeTitle{
@@ -499,8 +499,8 @@
         #ytEmbedContainer {
             grid-area: youtube;
             position: relative;
-            width: calc(100% - 20px);
-            padding-top: calc((100% - 20px) * 0.5625); // 16:9 Aspect Ratio (9/16 = 0.5625) 
+            width: 100%;
+            padding-top: 56.25%; // 16:9 Aspect Ratio (9/16 = 0.5625) 
             margin: 10px;
 
             iframe {
@@ -520,8 +520,8 @@
         #tiktokEmbedContainer{
             grid-area: tiktok;
             position: relative;
-            width: calc(100% - 20px);
-            padding-top: calc((100% - 20px) * 0.5625); // 16:9 Aspect Ratio (9/16 = 0.5625) 
+            width: 100%;
+            padding-top: 56.25%; // 16:9 Aspect Ratio (9/16 = 0.5625) 
             margin: 10px;
 
             blockquote {
@@ -544,9 +544,13 @@
         
         #twitchTitle {
             grid-area: twitchTitle;
+        }
+
+        #twitchEmbedContainer {
+            grid-area: twitch;
             position: relative;
-            width: calc(100% - 20px);
-            padding-top: calc((100% - 20px) * 0.5625); // 16:9 Aspect Ratio (9/16 = 0.5625) 
+            width: 100%;
+            padding-top: 56.25%; // 16:9 Aspect Ratio (9/16 = 0.5625) 
             margin: 10px;
 
             div {
@@ -557,10 +561,6 @@
                 height: 100%;
                 border: none;
             }
-        }
-
-        #twitchEmbedContainer {
-            grid-area: twitch;
         }
 
         #discordTitle {
