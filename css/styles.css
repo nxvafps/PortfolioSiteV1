@@ -519,8 +519,8 @@
   #socialsContainer #embedContainer #tiktokEmbedContainer iframe {
     max-width: 1200px;
   }
-  #socialsContainer #embedContainer #twitterEmbedContainer {
-    height: 1000px;
+  #socialsContainer #embedContainer #twitterEmbedContainer a {
+    margin: 10px;
   }
 }
 @media (max-width: 464px) {

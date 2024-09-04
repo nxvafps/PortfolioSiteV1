@@ -629,7 +629,9 @@
                 }
             }
             #twitterEmbedContainer {
-                height: 1000px;
+                a {
+                    margin: 10px;
+                }
             }
 
         }
