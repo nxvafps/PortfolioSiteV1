@@ -394,11 +394,23 @@
   }
 }
 
+#socialsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
 #socialsContainer #embedContainer {
   display: grid;
-  grid-template-areas: "youtubeTitle twitterTitle" "youtube twitter" "twitchTitle twitter" "twitch twitter" "tiktokTitle discordTitle" "tiktok discord";
   gap: 20px;
+  padding: 30px 0 0 0;
+  max-width: 1200px;
+  width: 100%;
   grid-template-columns: 2fr 1fr;
+  grid-template-areas: "youtubeTitle twitterTitle" "youtube twitter" "twitchTitle twitter" "twitch twitter" "tiktokTitle discordTitle" "tiktok discord";
 }
 #socialsContainer #embedContainer #youtubeTitle {
   grid-area: youtubeTitle;
@@ -417,6 +429,8 @@
   width: 100%;
   height: 100%;
   border: none;
+  max-width: 780px;
+  min-width: 288px;
 }
 #socialsContainer #embedContainer #tiktokTitle {
   grid-area: tiktokTitle;
@@ -435,12 +449,18 @@
   width: 100%;
   height: 100%;
   border: none;
+  max-width: 780px;
+  min-width: 288px;
 }
 #socialsContainer #embedContainer #twitterTitle {
   grid-area: twitterTitle;
 }
 #socialsContainer #embedContainer #twitterEmbedContainer {
   grid-area: twitter;
+}
+#socialsContainer #embedContainer #twitterEmbedContainer a {
+  max-width: 780px;
+  min-width: 288px;
 }
 #socialsContainer #embedContainer #twitchTitle {
   grid-area: twitchTitle;
@@ -459,6 +479,8 @@
   width: 100%;
   height: 100%;
   border: none;
+  max-width: 780px;
+  min-width: 288px;
 }
 #socialsContainer #embedContainer #discordTitle {
   grid-area: discordTitle;
@@ -470,6 +492,19 @@
   max-width: 100%;
   max-height: 100%;
   justify-self: center;
+}
+@media (max-width: 1200px) {
+  #socialsContainer #embedContainer {
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "youtubeTitle" "youtube" "twitchTitle" "twitch" "tiktokTitle" "tiktok" "twitterTitle" "twitter" "discordTitle" "discord";
+  }
+  #socialsContainer #embedContainer #twitterEmbedContainer {
+    height: 1000px;
+  }
+  #socialsContainer #embedContainer #ytEmbedContainer, #socialsContainer #embedContainer #tiktokEmbedContainer, #socialsContainer #embedContainer #twitchEmbedContainer {
+    margin: auto; /* Center the elements horizontally */
+  }
 }
 
 .wipText {
