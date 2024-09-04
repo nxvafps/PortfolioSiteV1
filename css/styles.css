@@ -397,6 +397,7 @@
 #socialsContainer #embedContainer {
   display: grid;
   grid-template-areas: "youtubeTitle twitterTitle" "youtube twitter" "twitchTitle twitter" "twitch twitter" "tiktokTitle discordTitle" "tiktok discord";
+  gap: 10px;
   grid-template-columns: 2fr 1fr;
 }
 #socialsContainer #embedContainer #youtubeTitle {
@@ -421,9 +422,19 @@
   grid-area: tiktokTitle;
 }
 #socialsContainer #embedContainer #tiktokEmbedContainer {
-  width: calc(100% - 20px);
-  margin: 10px;
   grid-area: tiktok;
+  position: relative;
+  width: calc(100% - 20px);
+  padding-top: calc((100% - 20px) * 0.5625);
+  margin: 10px;
+}
+#socialsContainer #embedContainer #tiktokEmbedContainer blockquote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 #socialsContainer #embedContainer #twitterTitle {
   grid-area: twitterTitle;
@@ -433,6 +444,18 @@
 }
 #socialsContainer #embedContainer #twitchTitle {
   grid-area: twitchTitle;
+  position: relative;
+  width: calc(100% - 20px);
+  padding-top: calc((100% - 20px) * 0.5625);
+  margin: 10px;
+}
+#socialsContainer #embedContainer #twitchTitle div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 #socialsContainer #embedContainer #twitchEmbedContainer {
   grid-area: twitch;

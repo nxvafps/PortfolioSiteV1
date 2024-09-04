@@ -17,22 +17,70 @@
     <main id="socialsContainer">
         <h1 id="socialsPageTitle" class="pageTitle">Socials</h1>
         <section id="embedContainer">
+
             <h2 id="youtubeTitle">Youtube</h2>
-            <div id="ytEmbedContainer" data-include="../includes/embeds/youtube.html"></div>
+            <div id="ytEmbedContainer" >
+                <iframe 
+                    id="youtubeEmbed" 
+                    src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UU71xx-BAbLPGbJsWu4WhPHQ" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
             <h2 id="tiktokTitle">Tiktok</h2>
-            <div id="tiktokEmbedContainer" data-include="../includes/embeds/tiktok.html"></div>
+            <div id="tiktokEmbedContainer">
+                <blockquote 
+                    class="tiktok-embed" 
+                    cite="https://www.tiktok.com/@nxvafps" 
+                    data-unique-id="nxvafps" 
+                    data-embed-type="creator" 
+                    style="max-width: 780px; min-width: 288px;" > 
+                    <section> 
+                        <a target="_blank" href="https://www.tiktok.com/@nxvafps?refer=creator_embed">@nxvafps</a> 
+                    </section> 
+                </blockquote> 
+            </div>
+
+
             <h2 id="twitterTitle">Twitter</h2>
-            <div id="twitterEmbedContainer" data-include="../includes/embeds/twitter.html"></div>
+            <div id="twitterEmbedContainer">
+                <a 
+                    class="twitter-timeline" 
+                    data-height="1000"
+                    data-theme="dark" 
+                    href="https://twitter.com/nxvaFPS?ref_src=twsrc%5Etfw">
+                    Tweets by nxvaFPS
+                </a> 
+            </div>
+            
             <h2 id="discordTitle">Discord</h2>
-            <div id="discordEmbedContainer" data-include="../includes/embeds/discord.html"></div>
+            <div id="discordEmbedContainer">
+                <a href="https://discord.gg/tSNujPdzAu">
+                    <img id="discordEmbed" src="https://discord.com/api/guilds/697799492568612904/widget.png?style=banner4"/>
+                    </a>
+            </div>
             
             <h2 id="twitchTitle">Twitch</h2>
-            <div id="twitchEmbedContainer" data-include="../includes/embeds/twitch.html"></div>
+            <div id="twitchEmbedContainer">
+                <div id="twitchEmbed"></div>
+            </div>
         </section>
     </main>
     
     <div id="footer" data-include="../includes/footer.html"></div>
 
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script type="text/javascript">
+        new Twitch.Embed("twitchEmbed", {
+        width: "100%",
+        height: "100%",
+        channel: "nxvafps",
+        allowfullscreen: false,
+        layout: "video",
+        muted: true,
+        parent: ['www.novafps.com', window.location.host]
+        });
+    </script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script async src="https://www.tiktok.com/embed.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
