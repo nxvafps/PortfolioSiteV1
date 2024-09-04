@@ -534,11 +534,11 @@
         #tiktokEmbedContainer{
             grid-area: tiktok;
             position: relative;
-            width: 100%;
-            padding-top: 56.25%; // 16:9 Aspect Ratio (9/16 = 0.5625) 
+            width: 100%; 
             margin: 10px;
+            
 
-            blockquote {
+            iframe {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -547,6 +547,9 @@
                 border: none;
                 max-width: 780px; 
                 min-width: 288px;
+                height: 480px;
+                max-height: 480px;
+                visibility: unset;
             }
         }
 
@@ -607,12 +610,9 @@
             align-items: center;
             justify-content: center;
             margin: auto;
-            #twitterEmbedContainer {
-                height: 1000px;
-            }
+            
             #ytEmbedContainer {
                 text-align: center;
-
                 iframe {
                     max-width: 1200px;
                 }
@@ -623,10 +623,15 @@
                 }
             }
             #tiktokEmbedContainer {
-                blockquote {
+                min-height: 480px;
+                iframe {
                     max-width: 1200px;
                 }
             }
+            #twitterEmbedContainer {
+                height: 1000px;
+            }
+
         }
     }
 

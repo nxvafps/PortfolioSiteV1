@@ -439,10 +439,9 @@
   grid-area: tiktok;
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
   margin: 10px;
 }
-#socialsContainer #embedContainer #tiktokEmbedContainer blockquote {
+#socialsContainer #embedContainer #tiktokEmbedContainer iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -451,6 +450,9 @@
   border: none;
   max-width: 780px;
   min-width: 288px;
+  height: 480px;
+  max-height: 480px;
+  visibility: unset;
 }
 #socialsContainer #embedContainer #twitterTitle {
   grid-area: twitterTitle;
@@ -502,9 +504,6 @@
     justify-content: center;
     margin: auto;
   }
-  #socialsContainer #embedContainer #twitterEmbedContainer {
-    height: 1000px;
-  }
   #socialsContainer #embedContainer #ytEmbedContainer {
     text-align: center;
   }
@@ -514,8 +513,14 @@
   #socialsContainer #embedContainer #twitchEmbedContainer div {
     max-width: 1200px;
   }
-  #socialsContainer #embedContainer #tiktokEmbedContainer blockquote {
+  #socialsContainer #embedContainer #tiktokEmbedContainer {
+    min-height: 480px;
+  }
+  #socialsContainer #embedContainer #tiktokEmbedContainer iframe {
     max-width: 1200px;
+  }
+  #socialsContainer #embedContainer #twitterEmbedContainer {
+    height: 1000px;
   }
 }
 
