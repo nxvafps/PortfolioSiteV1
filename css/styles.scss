@@ -601,24 +601,31 @@
 
     @media (max-width: 1200px) {
         #embedContainer {
-            justify-items: center;
-            grid-template-columns: 1fr;
-            grid-template-areas: 
-                "youtubeTitle"
-                "youtube"
-                "twitchTitle"
-                "twitch"
-                "tiktokTitle"
-                "tiktok"
-                "twitterTitle"
-                "twitter"
-                "discordTitle"
-                "discord";
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
             #twitterEmbedContainer {
                 height: 1000px;
             }
-            #ytEmbedContainer, #tiktokEmbedContainer, #twitchEmbedContainer {
-            margin: auto; /* Center the elements horizontally */
+            #ytEmbedContainer {
+                text-align: center;
+
+                iframe {
+                    max-width: 1200px;
+                }
+            }
+            #twitchEmbedContainer {
+                div {
+                    max-width: 1200px;
+                }
+            }
+            #tiktokEmbedContainer {
+                blockquote {
+                    max-width: 1200px;
+                }
             }
         }
     }

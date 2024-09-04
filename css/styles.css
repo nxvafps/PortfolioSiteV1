@@ -495,15 +495,27 @@
 }
 @media (max-width: 1200px) {
   #socialsContainer #embedContainer {
-    justify-items: center;
-    grid-template-columns: 1fr;
-    grid-template-areas: "youtubeTitle" "youtube" "twitchTitle" "twitch" "tiktokTitle" "tiktok" "twitterTitle" "twitter" "discordTitle" "discord";
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
   }
   #socialsContainer #embedContainer #twitterEmbedContainer {
     height: 1000px;
   }
-  #socialsContainer #embedContainer #ytEmbedContainer, #socialsContainer #embedContainer #tiktokEmbedContainer, #socialsContainer #embedContainer #twitchEmbedContainer {
-    margin: auto; /* Center the elements horizontally */
+  #socialsContainer #embedContainer #ytEmbedContainer {
+    text-align: center;
+  }
+  #socialsContainer #embedContainer #ytEmbedContainer iframe {
+    max-width: 1200px;
+  }
+  #socialsContainer #embedContainer #twitchEmbedContainer div {
+    max-width: 1200px;
+  }
+  #socialsContainer #embedContainer #tiktokEmbedContainer blockquote {
+    max-width: 1200px;
   }
 }
 
