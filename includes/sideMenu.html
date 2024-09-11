@@ -5,44 +5,24 @@
     <a href="./socials.html" class="sideMenuLink" data-url="./socials.html">Socials</a>
 </div>
 <script>
-    const hamburgerMenu = document.getElementById("hamburgerMenu");
-    const closeButton = document.getElementById("closeButton")
-    const sideMenu = document.getElementById("sideMenuContainer");
+$(function() {
+    const $hamburgerMenu = $("#hamburgerMenu"),
+          $closeButton = $("#closeButton"),
+          $sideMenu = $("#sideMenuContainer");
 
-    document.addEventListener("click", (event) =>{
-        if(hamburgerMenu.contains(event.target)|| closeButton.contains(event.target))
-        {
-            sideMenu.classList.toggle("open");
+    $(document).on("click", (event) => {
+        if ($hamburgerMenu.is(event.target) || $closeButton.is(event.target)) {
+            $sideMenu.toggleClass("open");
         }
     });
 
-    const currentPath = window.location.pathname;
-    console.log(currentPath)
+    const relativeCurrentPath = window.location.pathname.split('/').pop();
+    console.log(relativeCurrentPath);
 
-    // Function to get the relative path from the full path
-    function getRelativePath(fullPath) {
-        const pathArray = fullPath.split('/');
-        return pathArray[pathArray.length - 1];
-    }
-
-    // Get the relative path of the current URL
-    const relativeCurrentPath = getRelativePath(currentPath);
-
-    // Get all navigation links
-    const sideMenuLinks = document.querySelectorAll(".sideMenuLink");
-
-    // Loop through each navigation link
-    sideMenuLinks.forEach(link => {
-        // Get the relative path of the link's href
-        const url = link.getAttribute("data-url");
-        const relativeLinkPath = getRelativePath(url);
-        // Check if the link's relative path matches the current relative path
-        if (relativeLinkPath === relativeCurrentPath) {
-            // Add the currentNavLink class to the matching link
-            link.setAttribute("href", "#");
-        } else {
-            // Remove the currentNavLink class from non-matching links
-            link.setAttribute("href", url);
-        }
+    $(".sideMenuLink").each(function() {
+        const $link = $(this),
+              relativeLinkPath = $link.data("url").split('/').pop();
+        $link.attr("href", relativeLinkPath === relativeCurrentPath ? "#" : $link.data("url"));
     });
+});
 </script>
