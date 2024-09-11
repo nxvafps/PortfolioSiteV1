@@ -8,20 +8,36 @@
     <link rel="stylesheet" href="../../../css/styles.css">
 </head>
 
-<body data-page="nv1Track"> 
+<body id="nv1TrackBody" data-page="nv1Track"> 
 
-    <div id="header" data-include="../includes/nv1Header.html"></div>
+    <div id="header"></div>
 
-    <div id="sideMenu" data-include="../includes/nv1SideMenu.html"></div>
+    <div id="sideMenu"></div>
 
-    <main id="nv1TrackContainer">
-        <h2 class="wipText">This page is a work in progress, please check back soon!</h2>
+    <h1 id="nv1TrackTitle" class="pageTitle">Track Games</h1>
+
+    <main id="nv1TrackMain">
+        <section id="mapAndModeContainer">
+            <section id="mapSelect">
+                <section id="mapSearch">
+                    <p id="mapText"></p>
+                    <input id="mapInput" type="text" placeholder="Select Map"> 
+                </section>
+                <ul id="mapList"></ul>
+            </section>
+            <section id="modeContainer">
+                <img src="" id="modeImg">
+                <p id="modeText"></p>
+            </section>
+        </section>
     </main>
+
     
-    <div id="footer" data-include="../includes/nv1Footer.html"></div>
+    <div id="footer"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../../../js/main.js" charset="utf-8"></script>
+    <script src="../js/nv1Templates.js" charset="utf-8"></script>
     <script src="../js/nv1Track.js" charset="utf-8"></script>
 </body>
 </html>

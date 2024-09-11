@@ -18,14 +18,14 @@
 }
 * .pageTitle {
   margin: 20px 0 10px 0;
-  width: 100%;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 * .invisible {
   display: none;
 }
-* .border {
+* .thinWhiteBorder {
   border: 1px solid #ffffff;
 }
 * ::-webkit-scrollbar {
@@ -173,7 +173,6 @@
   justify-content: center;
   height: 80px;
   width: 80%;
-  padding: 20px 0 0 0;
   margin: auto;
   gap: 20px;
 }
@@ -184,18 +183,19 @@
   background-color: #7b7777;
 }
 
-#footer .returnButtonContainer {
+#footer #returnButtonContainer {
   text-align: center;
   box-sizing: border-box;
+  margin: 20px 0;
 }
-#footer .returnButtonContainer .returnButton {
+#footer #returnButtonContainer #returnButton {
   text-decoration: none;
   margin: 0 5px;
   padding: 5px 10px;
   background-color: #ffffff;
   color: #7b7777;
 }
-#footer .returnButtonContainer .returnButton:hover {
+#footer #returnButtonContainer #returnButton:hover {
   background-color: #434343;
   color: #ffffff;
 }
@@ -548,25 +548,27 @@
   padding: 20px;
 }
 
-#nv1HomeContainer {
+#nv1HomeBody #nv1HomeMain {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 20px 0 20px 0;
 }
-#nv1HomeContainer #nv1DetailsContainer {
+#nv1HomeBody #nv1HomeMain #nv1DetailsContainer {
   display: flex;
   max-width: 80%;
   margin: auto;
 }
 
-.mapSelectContainer {
+#nv1TrackBody main {
+  margin: 0 0 30px 0;
+}
+#nv1TrackBody main #mapAndModeContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
-.mapContainer {
+#nv1TrackBody main #mapAndModeContainer #mapSelect {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -574,23 +576,14 @@
   color: #ffffff;
   background-color: #7b7777;
 }
-
-.mapTextContainer {
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapSearch {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 200px;
   height: 40px;
 }
-
-.mapText {
-  font-size: 20px;
-  text-align: center;
-  background-color: #7b7777;
-  color: #ffffff;
-}
-
-.mapSearch {
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapSearch #mapInput {
   max-width: 200px;
   height: 40px;
   border: 1px solid #ffffff;
@@ -599,12 +592,16 @@
   background-color: #7b7777;
   color: #ffffff;
 }
-
-.mapSearch::placeholder {
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapSearch #mapInput::placeholder {
   color: #ffffff;
 }
-
-.mapList {
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapSearch #mapText {
+  font-size: 20px;
+  text-align: center;
+  background-color: #7b7777;
+  color: #ffffff;
+}
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapList {
   width: 200px;
   max-height: 150px;
   overflow-y: auto; /*adds scroll bar*/
@@ -615,30 +612,25 @@
   background-color: #ffffff;
   color: #7b7777;
 }
-
-.mapList > li {
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapList li {
   padding: 5px;
   cursor: pointer;
 }
-
-.mapList > li:hover {
+#nv1TrackBody main #mapAndModeContainer #mapSelect #mapList li:hover {
   background-color: #7b7777;
   color: #ffffff;
 }
-
-.gameModeContainer {
+#nv1TrackBody main #mapAndModeContainer #modeContainer {
   display: flex;
   flex-direction: row;
   height: 40px;
   align-items: center;
 }
-
-.gameModeImg {
+#nv1TrackBody main #mapAndModeContainer #modeContainer #modeImg {
   height: 30px;
   width: 30px;
   margin: 5px 10px;
 }
-
-.gameModeText {
+#nv1TrackBody main #mapAndModeContainer #modeContainer #modeText {
   font-size: 20px;
 }/*# sourceMappingURL=styles.css.map */

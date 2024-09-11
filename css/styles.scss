@@ -21,16 +21,16 @@
     
     .pageTitle {
         margin: 20px 0 10px 0;
-        width: 100%;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
     }
 
     .invisible {
         display: none;
     }
     
-    .border {
+    .thinWhiteBorder {
         border: 1px solid #ffffff;
     }
     
@@ -208,7 +208,6 @@
     justify-content:center;
     height:80px;
     width: 80%;
-    padding:20px 0 0 0;
     margin: auto;
     gap: 20px;
 
@@ -223,11 +222,12 @@
 }
 
 #footer {
-    .returnButtonContainer {
+    #returnButtonContainer {
         text-align: center;
         box-sizing: border-box;
+        margin: 20px 0;
 
-        .returnButton {
+        #returnButton {
             text-decoration: none;
             margin: 0 5px;
             padding: 5px 10px;
@@ -235,7 +235,7 @@
             color: #7b7777;
         }
 
-        .returnButton:hover {
+        #returnButton:hover {
             background-color: #434343;
             color: #ffffff;
         }
@@ -669,9 +669,9 @@
 .wipText {
     padding: 20px;
 }
-
-#nv1HomeContainer{
-    display: flex;
+#nv1HomeBody {
+    #nv1HomeMain {
+        display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 20px 0 20px 0;
@@ -681,97 +681,89 @@
         max-width: 80%;
         margin: auto;
     }
-
-}
-
-
-
-
-
-
-
-.mapSelectContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.mapContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 200px;
-    color: #ffffff;
-    background-color: #7b7777;
-}
-
-        .mapTextContainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 200px;
-            height:40px;
-        }
-
-        .mapText {
-            font-size: 20px;
-            text-align: center;
-            background-color: #7b7777;
-            color: #ffffff;
-        }
-
-        .mapSearch {
-            max-width: 200px;
-            height: 40px;
-            border: 1px solid #ffffff;
-            font-size: 20px;
-            text-align: center;
-            background-color: #7b7777;
-            color: #ffffff;
-        }
-
-        .mapSearch::placeholder {
-            color: #ffffff;
-        }
-
-        .mapList {
-            width: 200px;
-            max-height: 150px;
-            overflow-y: auto;/*adds scroll bar*/
-            outline: 1px solid #7b7777;
-            font-size: 15px;
-            text-align: center;
-            list-style-type: none;/*removes list icons*/
-            background-color: #ffffff;
-            color: #7b7777;
-        }
-
-        .mapList > li {
-            padding: 5px;
-            cursor: pointer;
-        }
-
-        .mapList > li:hover {
-            background-color: #7b7777;
-            color: #ffffff;
-        }
-
-    .gameModeContainer {
-    display: flex;
-    flex-direction: row;
-    height: 40px;
-    align-items: center;
     }
+}
 
-        .gameModeImg {
-            height: 30px;
-            width: 30px;
-            margin: 5px 10px;
+#nv1TrackBody {
+    main {
+    margin: 0 0 30px 0;
+    #mapAndModeContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        #mapSelect {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+            color: #ffffff;
+            background-color: #7b7777;
+            #mapSearch {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 200px;
+                height:40px;
+                #mapInput {
+                    max-width: 200px;
+                    height: 40px;
+                    border: 1px solid #ffffff;
+                    font-size: 20px;
+                    text-align: center;
+                    background-color: #7b7777;
+                    color: #ffffff;
+                }
+                #mapInput::placeholder {
+                    color: #ffffff;
+                }
+                #mapInput::focus {
+                    outline: none;
+                    border: none;
+                }
+                #mapText {
+                    font-size: 20px;
+                    text-align: center;
+                    background-color: #7b7777;
+                    color: #ffffff;
+                }
+            }
+            #mapList {
+                width: 200px;
+                max-height: 150px;
+                overflow-y: auto;/*adds scroll bar*/
+                outline: 1px solid #7b7777;
+                font-size: 15px;
+                text-align: center;
+                list-style-type: none;/*removes list icons*/
+                background-color: #ffffff;
+                color: #7b7777;
+                    li {
+                        padding: 5px;
+                        cursor: pointer;
+                    }
+                    li:hover {
+                        background-color: #7b7777;
+                        color: #ffffff;
+                    }
+            }
         }
-
-        .gameModeText {
-            font-size: 20px;
+        #modeContainer {
+            display: flex;
+            flex-direction: row;
+            height: 40px;
+            align-items: center;
+            #modeImg {
+                height: 30px;
+                width: 30px;
+                margin: 5px 10px;
+            }
+            #modeText {
+                font-size: 20px;
+            }
         }
+    }
+    }
+}
 
 
 
