@@ -56,9 +56,12 @@ $(document).ready(function() {
     const sideMenuHTML = `
         <div id="sideMenuContainer">
             <a href="javascript:void(0)" id="closeButton">&times;</a>
-            <a href="./home.html" class="sideMenuLink" data-url="./home.html">Home</a>
-            <a href="./portfolioProjects.html" class="sideMenuLink" data-url="./portfolioProjects.html">Portfolio</a>
-            <a href="./socials.html" class="sideMenuLink" data-url="./socials.html">Socials</a>
+            <a href="./nv1Home.html" class="sideMenuLink" data-url="./nv1Home.html">Home</a>
+            <a href="./nv1Track.html" class="sideMenuLink" data-url="./nv1Track.html">Track</a>
+            <a href="./nv1View.html" class="sideMenuLink" data-url="./nv1View.html">View</a>
+            <a href="./nv1Stats.html" class="sideMenuLink" data-url="./nv1Stats.html">Stats</a>
+            <a href="./nv1Wiki.html" class="sideMenuLink" data-url="./nv1Wiki.html">Wiki</a>
+            <a href="./nv1Comp.html" class="sideMenuLink" data-url="./nv1Comp.html">Comp</a>
         </div>
     `;
 
