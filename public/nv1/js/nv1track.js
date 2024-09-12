@@ -155,67 +155,54 @@ let maps = [
 	modeText = $('#modeText'),
 	modeImg = $('#modeImg');
 	
-	modeContainer.hide();
-	
-	function dropdownVis(a) { 
-		a === 'hide' ? mapList.hide() : mapList.show();
-		mapInput.toggleClass('border', a === 'hide');
-	}
-	
-	function mapSearchVis(a) { // controls whether the map search option or the plain text value is shown
-		a === 'hide' ? mapInput.hide() : mapInput.show();
-		a === 'show' ? mapText.hide() : mapText.show();
-	}
-	
-	function setMap(e, f) {
-		mapInput.blur(); 
-		mapInput.val(e); // sets the map input to the inputted value
-		mapText.text(e); // sets the map text to the inputted value
-		mapSearchVis('hide'); // shows the plain text value
-		dropdownVis('hide'); // hides the map dropdown
-		modeText.text(f); // sets the game mode text value to the corresponding value
-		modeImg.attr('src', `../images/gameModes/${f}.png`);
-		modeContainer.show(); // sets the map image and makes it visible
-	}
-	
-	$.each(maps, function(index, map) {
-		$('<li>')
-			.text(map.name)
-			.attr('data-index', index)
-			.addClass('mapListItem')
-			.appendTo('#mapList');
+	$(document).ready(() => {
+		modeContainer.hide();
+		maps.forEach((map, index) => {
+			$('<li>')
+				.text(map.name)
+				.attr('data-index', index)
+				.addClass('mapListItem')
+				.appendTo(mapList);
+		});
+		mapList.hide();
 	});
-	dropdownVis('hide');
+
+	const setMap = (map, mode) => {
+		mapInput.blur().val(map).hide(); 
+		mapText.text(map).show(); // sets the map text to the inputted value
+		mapList.hide(); // hides the map dropdown
+		modeText.text(mode); // sets the game mode text value to the corresponding value
+		modeImg.attr('src', `../images/gameModes/${mode}.png`);
+		modeContainer.show(); // sets the map image and makes it visible
+	};
 	
-	mapInput.on('keyup', function() {
+	mapInput.on('keyup', () => {
 		const filter = $(this).val().toLowerCase();
 		const $li = $('#mapList li');
-		dropdownVis('show');
+		mapList.show();
 	
-		$li.each(function(index) { // hides the map in the list if it doesn't contain the input
-			!maps[index].name.toLowerCase().includes(filter) ? $(this).hide() : $(this).show();
+		$li.each((index, element) => { // hides the map in the list if it doesn't contain the input
+			$(element).toggle(maps[index].name.toLowerCase().includes(filter));
 		});
 	
-		for (const map of maps) {
-			if (map.name.toLowerCase() === filter) {
-				
-				setMap(map.name, map.mode);
-				return;
-			}
+		const map = maps.find(map => map.name.toLowerCase() === filter);
+		if (map) {
+			setMap(map.name, map.mode);
+		} else {
+			modeContainer.hide();
 		}
-		modeContainer.hide();
 	});
 	
-	$(document).on('click', function(event) {
+	$(document).on('click', (event) => {
 		if (!mapSelect.is(event.target) && !mapSelect.has(event.target).length) { // if nothing inside of the map select is clicked on
-			dropdownVis('hide');
+			mapList.hide();
 			return;
 		}
 		if (mapText.is(event.target) || mapInput.is(event.target)) { // if map text or input are clicked on
-			mapSearchVis('show');
-			dropdownVis('show');
+			mapInput.show().focus();
+			mapList.show();
+			mapText.hide();
 			modeContainer.hide();
-			mapInput.focus();
 			return;
 		}
 		if ($(event.target).hasClass('mapListItem')) { // if a map list item is clicked on
@@ -224,4 +211,3 @@ let maps = [
 	
 		}
 	});
-	
